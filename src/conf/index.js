@@ -1,4 +1,6 @@
-const { dbSettings, serverSettings } = require('./config');
-const db = require('./mongoose')
+'use strict';
 
-module.exports = Object.assign({}, { dbSettings, serverSettings, db })
+const { dbSettings, serverSettings } = require('./config');
+const db = require('./mongoose');
+
+module.exports = Object.assign({}, { dbSettings, serverSettings, db });

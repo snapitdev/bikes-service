@@ -6,7 +6,8 @@
     "test": "echo 'Tests are successful!'",
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "lint": "echo 'Linting is great!'"
+    "lint": "eslint .",
+    "sonar": "bash ./bin/runSonar.sh"
   },
   "repository": "https://github.com/snapitdev/bikes-services.git",
   "author": "Aimar Aareleid <aareleid@worth.systems>",
@@ -18,8 +19,13 @@
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "global": "^4.3.2",
     "helmet": "^3.13.0",
     "mongoose": "^5.2.13",
     "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-strongloop": "^2.1.0"
   }
 }
