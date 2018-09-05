@@ -18,19 +18,28 @@ process.on('uncaughtRejection', (err, promise) => {
 });
 
 mediator.on('db.ready', (db) => {
+
+  // console.log('index', db);
+
   let rep;
+
   controller.connect(db)
     .then(cont => {
-      console.log(cont, 'Connected. Starting Server');
+      // console.log('CONT!', cont);
+      console.log('Connected to bikes controller. Starting Server');
       rep = cont;
       return server.start({
         port: config.serverSettings.port,
-        ssl: config.serverSettings.ssl,
-        cont,
+        // ssl: config.serverSettings.ssl,
+        bikes: cont,
       });
     })
     .then(app => {
-      console.log(app, 'Server started succesfully, running on port:');
+      // console.log('APP', app);
+      console.log(
+        `Server started succesfully, running on port:
+        ${config.serverSettings.port}.`
+      );
       app.on('close', () => {
         rep.disconnect();
       });
