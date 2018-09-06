@@ -35,7 +35,7 @@ mediator.on('db.ready', (db) => {
       });
     })
     .then(app => {
-      // console.log('APP', app);
+      console.log('APP', app);
       console.log(
         `Server started succesfully, running on port:
         ${config.serverSettings.port}.`
